@@ -19,13 +19,11 @@ function animatePress(currentColor){
     }, 100);
 }
 
-$(document).keypress(function(){
-    if (!gameStarted){
+$(document).on("keypress touchstart click", function () {
+    if (!gameStarted) {
         gameStarted = true;
         nextSequence();
     }
-
-    //$("h1").text("Level " + level);
 });
 
 function checkAnswer(currentLevel){
