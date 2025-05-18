@@ -32,14 +32,14 @@ function checkAnswer(currentLevel){
         console.log("Success");
     }
     else{
+        setTimeout(function() { gameStarted = false; }, 1000);
         console.log("Wrong!");
         gameOverAudio.play();
         $("body").addClass("game-over");
         setTimeout(function() {
             $("body").removeClass("game-over");
         }, 200);
-        $("h1").text("Game Over, Press Any Key to Restart");
-        setTimeout(function() { gameStarted = false; }, 1000);
+        $("h1").text("Game Over, Press Any Key to Restart");  
         level = 1;
         gamePattern = [];
     }
